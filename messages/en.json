@@ -1,0 +1,110 @@
+{
+  "navigation": {
+    "home": "Home",
+    "tours": "Tours",
+    "about": "About Us",
+    "planJourney": "Plan Your Journey",
+    "requestQuote": "Request a Personalized Quote",
+    "language": "Language"
+  },
+  "hero": {
+    "headline": "Discover Sri Lanka in Luxury",
+    "subheadline": "Tailor-made private tours crafted for the discerning traveler",
+    "exploreTours": "Explore Tours",
+    "requestQuote": "Request a Quote"
+  },
+  "whyChooseUs": {
+    "title": "Why Travel With CeylonVoy",
+    "subtitle": "We craft exceptional Sri Lanka experiences tailored to your preferences",
+    "privateTours": {
+      "title": "Private Tours",
+      "description": "Exclusively for you and your group. No shared coaches, no strangers."
+    },
+    "tailorMade": {
+      "title": "Tailor-Made Itineraries",
+      "description": "Every journey is designed around your interests, pace, and preferences."
+    },
+    "transportation": {
+      "title": "Comfortable Transportation",
+      "description": "Premium vehicles with professional drivers for a seamless experience."
+    },
+    "guides": {
+      "title": "Experienced Guides",
+      "description": "Knowledgeable local guides passionate about sharing Sri Lanka's stories."
+    },
+    "localExpertise": {
+      "title": "Local Expertise",
+      "description": "Deep knowledge of hidden gems and authentic experiences across the island."
+    },
+    "arabicFriendly": {
+      "title": "Arabic-Friendly Service",
+      "description": "Halal food, Arabic-speaking guides, and Muslim-friendly accommodations."
+    }
+  },
+  "featuredTours": {
+    "title": "Featured Experiences",
+    "subtitle": "Carefully curated journeys through Sri Lanka's most breathtaking destinations",
+    "viewAll": "View All Tours",
+    "requestQuote": "Request a Quote",
+    "days": "Days",
+    "nights": "Nights"
+  },
+  "experiences": {
+    "title": "Experience Sri Lanka",
+    "subtitle": "From ancient temples to pristine beaches, every corner tells a story"
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "subtitle": "Real experiences from travelers who discovered Sri Lanka with us"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about traveling with CeylonVoy",
+    "customize": {
+      "question": "Can tours be customized?",
+      "answer": "Absolutely. Every itinerary we create is built from scratch around your travel dates, interests, group size, and budget. No two CeylonVoy journeys are the same."
+    },
+    "transfers": {
+      "question": "Are airport transfers included?",
+      "answer": "Yes. All our tour packages include private airport transfers in comfortable, air-conditioned vehicles."
+    },
+    "hotels": {
+      "question": "Can you arrange hotels?",
+      "answer": "Yes. We offer a Tour + Accommodation package where we curate and book hotels that match your style and budget — from boutique properties to luxury resorts."
+    },
+    "halal": {
+      "question": "Is halal food available throughout the tour?",
+      "answer": "Sri Lanka has a significant Muslim community, and halal food is widely available. We specifically plan meal stops and restaurant recommendations with halal options in mind."
+    },
+    "arabicGuides": {
+      "question": "Are Arabic-speaking guides available?",
+      "answer": "Yes, we can arrange Arabic-speaking guides for your tour. Please mention this in your quotation request."
+    },
+    "howToBook": {
+      "question": "How do I request a quotation?",
+      "answer": "Simply fill out our Plan Your Journey form with your travel details and preferences. Our team will respond with a personalized proposal within 24–48 hours."
+    }
+  },
+  "cta": {
+    "title": "Ready to Discover Sri Lanka?",
+    "subtitle": "Let us craft your perfect journey. Contact us today for a personalized quotation.",
+    "requestQuote": "Request a Personalized Quote",
+    "whatsapp": "Chat on WhatsApp"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewDetails": "View Details",
+    "requestQuote": "Request a Quote",
+    "backToTours": "Back to Tours",
+    "night": "Night",
+    "nights": "Nights",
+    "day": "Day",
+    "days": "Days"
+  },
+  "footer": {
+    "tagline": "Premium Sri Lanka experiences tailored for the discerning traveler.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact Us",
+    "rights": "All rights reserved."
+  }
+}

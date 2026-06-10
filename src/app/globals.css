@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+    /* ─────────────────────────────────────
+     Brand Colors
+  ───────────────────────────────────── */
+    --color-emerald-primary: #046A38;
+    --color-emerald-dark: #024D29;
+    --color-gold-accent: #D4AF37;
+    --color-gold-light: #E8D9A8;
+    --color-ivory: #FAF8F2;
+
+    /* ─────────────────────────────────────
+     Text Colors
+  ───────────────────────────────────── */
+    --color-heading: #1F2937;
+    --color-body: #4B5563;
+    --color-muted: #9CA3AF;
+
+    /* ─────────────────────────────────────
+     Typography
+     These reference CSS vars injected
+     by next/font (defined in fonts.ts)
+  ───────────────────────────────────── */
+    --font-sans: var(--font-cairo), system-ui, sans-serif;
+    --font-display: var(--font-playfair), Georgia, serif;
+
+    /* ─────────────────────────────────────
+     Custom Spacing
+  ───────────────────────────────────── */
+    --spacing-section: 5rem;
+    --spacing-section-lg: 8rem;
+}
+
+/* ─────────────────────────────────────
+   Base Styles
+───────────────────────────────────── */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─────────────────────────────────────
+   RTL Typography Adjustments
+───────────────────────────────────── */
+[dir="rtl"] {
+    font-family: var(--font-cairo), system-ui, sans-serif;
+    letter-spacing: 0;
+}
+
+/* In RTL, always use Cairo (not Playfair — 
+   Playfair has no Arabic glyphs) */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4 {
+    font-family: var(--font-cairo), system-ui, sans-serif;
+    font-weight: 700;
+}

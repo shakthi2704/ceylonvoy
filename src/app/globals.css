@@ -9,6 +9,7 @@
     --color-gold-accent: #D4AF37;
     --color-gold-light: #E8D9A8;
     --color-ivory: #FAF8F2;
+    --color-emerald-deepest: #010F08;
 
     /* ─────────────────────────────────────
      Text Colors
@@ -60,4 +61,20 @@ body {
 [dir="rtl"] h4 {
     font-family: var(--font-cairo), system-ui, sans-serif;
     font-weight: 700;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@theme {
+    --animate-fade-up: fade-up 0.7s ease forwards;
 }

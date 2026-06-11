@@ -4,6 +4,8 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { cairo, playfairDisplay } from '@/lib/fonts';
 import { routing } from '@/i18n/routing';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
 import '../globals.css';
 
 export const metadata: Metadata = {
@@ -28,14 +30,11 @@ export default async function LocaleLayout({
 }) {
     const { locale } = await params;
 
-    // Reject any unsupported locale immediately
     if (!routing.locales.includes(locale as typeof routing.locales[number])) {
         notFound();
     }
 
     const isRTL = locale === 'ar';
-
-    // Load all messages for this locale (passed to client components)
     const messages = await getMessages();
 
     return (
@@ -46,7 +45,12 @@ export default async function LocaleLayout({
         >
             <body className="bg-ivory text-body font-sans antialiased min-h-screen flex flex-col">
                 <NextIntlClientProvider messages={messages}>
-                    {children}
+                    <Header />
+                    {/* pt-20 clears the fixed header (h-20) */}
+                    <main className="flex-1">
+                        {children}
+                    </main>
+                    <Footer />
                 </NextIntlClientProvider>
             </body>
         </html>

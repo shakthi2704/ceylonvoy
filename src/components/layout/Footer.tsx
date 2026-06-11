@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { MessageCircle, Mail } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from '@/components/ui/SocialIcons';
 import { SOCIAL_LINKS } from '@/lib/constants';
+import Image from 'next/image';
 
 import { Link } from '@/i18n/navigation';
 import {
@@ -15,6 +16,12 @@ const NAV_LINKS = [
     { href: '/tours', labelKey: 'tours' },
     { href: '/about', labelKey: 'about' },
     { href: '/plan-your-journey', labelKey: 'planJourney' },
+] as const;
+const TOUR_LINKS = [
+    { href: '/tours/classic-sri-lanka', labelKey: 'classicSriLanka' },
+    { href: '/tours/wildlife-adventure', labelKey: 'wildlifeAdventure' },
+    { href: '/tours/beach-escape', labelKey: 'beachEscape' },
+    { href: '/tours/luxury-journey', labelKey: 'luxuryJourney' },
 ] as const;
 
 // Update these when real social URLs are ready
@@ -33,18 +40,18 @@ export async function Footer() {
             {/* Gold accent line at top */}
             <div className="h-px bg-gradient-to-r from-transparent via-gold-accent to-transparent" />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 border-b border-white/10 text-center">
-                <p className="font-display text-xl sm:text-2xl text-white/30 italic tracking-wide">
-                    Crafting extraordinary Sri Lanka journeys, one traveler at a time.
+                <p className="font-display text-xl  text-white/30 italic tracking-wide">
+                    {tFooter('brandStatement')}
                 </p>
             </div>
 
             {/* Main Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
                     {/* ── Column 1: Brand ─────────────────────────── */}
-                    <div className="space-y-6">
+                    <div className="space-y-2">
                         {/* Logo */}
-                        <div>
+                        {/* <div>
                             <Link href="/" className="inline-block">
                                 <span className="font-display font-bold text-2xl text-white tracking-wide">
                                     Ceylon<span className="text-gold-accent">Voy</span>
@@ -54,8 +61,16 @@ export async function Footer() {
                             <p className="text-[10px] tracking-[0.25em] uppercase text-white/40 mt-1">
                                 Sri Lanka
                             </p>
-                        </div>
+                        </div> */}
 
+                        <Image
+                            src="/logo/logo.png" // place your logo in public/logo.png
+                            alt="CeylonVoy Logo"
+                            width={180}
+                            height={60}
+                            className="h-24 w-auto"
+                            priority
+                        />
                         {/* Tagline */}
                         <p className="text-white/60 text-sm leading-relaxed max-w-xs">
                             {tFooter('tagline')}
@@ -90,7 +105,7 @@ export async function Footer() {
                                 <li key={href}>
                                     <Link
                                         href={href}
-                                        className="text-white/60 hover:text-white text-sm transition-colors duration-200 inline-flex items-center gap-2 group"
+                                        className="text-white/60 hover:text-white text-base transition-colors duration-200 inline-flex items-center gap-2 group"
                                     >
                                         <span className="w-4 h-px bg-gold-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200 shrink-0" />
                                         {tNav(labelKey)}
@@ -100,7 +115,29 @@ export async function Footer() {
                         </ul>
                     </div>
 
-                    {/* ── Column 3: Contact ────────────────────────── */}
+
+                    {/* ── Column 3: Tour Packages ────────────────────── */}
+                    <div>
+                        <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-accent mb-6 flex items-center gap-3">
+                            <span>{tFooter('tourPackages')}</span>
+                            <span className="flex-1 h-px bg-gold-accent/25" />
+                        </h3>
+
+                        <ul className="space-y-3">
+                            {TOUR_LINKS.map(({ href, labelKey }) => (
+                                <li key={href}>
+                                    <Link
+                                        href={href}
+                                        className="text-white/60 hover:text-white text-base transition-colors duration-200 inline-flex items-center gap-2 group"
+                                    >
+                                        <span className="w-4 h-px bg-gold-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200 shrink-0" />
+                                        {tFooter(labelKey as any)}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {/* ── Column 4: Contact ────────────────────────── */}
                     <div>
                         <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-accent mb-6 flex items-center gap-3">
                             <span>{tFooter('contact')}</span>
@@ -118,7 +155,7 @@ export async function Footer() {
                                         <MessageCircle className="w-4 h-4 text-gold-accent" />
                                     </span>
 
-                                    <span className="text-sm">{CONTACT_WHATSAPP}</span>
+                                    <span className="text-base">{CONTACT_WHATSAPP}</span>
                                 </a>
                             </li>
 
@@ -131,11 +168,12 @@ export async function Footer() {
                                         <Mail className="w-4 h-4 text-gold-accent" />
                                     </span>
 
-                                    <span className="text-sm">{CONTACT_EMAIL}</span>
+                                    <span className="text-base">{CONTACT_EMAIL}</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
+
 
                 </div>
             </div>
@@ -148,7 +186,7 @@ export async function Footer() {
                     </p>
 
                     <p className="text-white/25 text-xs">
-                        Designed for the discerning traveler
+                        Designed by ADS ROVA Digital Marketing
                     </p>
                 </div>
             </div>

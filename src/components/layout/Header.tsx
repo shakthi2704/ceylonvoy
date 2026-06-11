@@ -6,11 +6,13 @@ import { Menu, X, Globe } from 'lucide-react';
 import { Link, usePathname } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/Button';
+import Image from 'next/image';
 
 const NAV_LINKS = [
     { href: '/', labelKey: 'home' },
     { href: '/tours', labelKey: 'tours' },
     { href: '/about', labelKey: 'about' },
+
     { href: '/plan-your-journey', labelKey: 'planJourney' },
 ] as const;
 
@@ -51,16 +53,17 @@ export function Header() {
                 className={cn(
                     'fixed top-0 start-0 end-0 z-50 transition-all duration-300',
                     scrolled
-                        ? 'bg-white/80 backdrop-blur-md shadow-sm'
-                        : 'bg-black/20'
+                        ? 'bg-black/60 backdrop-blur-md shadow-sm'
+                        : 'bg-black/50'
                 )}
             >
+                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[var(--color-gold-accent)] z-20" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-20 rtl:flex-row-reverse">
+                    <div className="grid grid-cols-[auto_1fr_auto] items-center h-20">
 
                         {/* Logo */}
                         <Link href="/" className="shrink-0 group">
-                            <div className="flex flex-col leading-none">
+                            {/* <div className="flex flex-col leading-none">
                                 <span
                                     className={cn(
                                         'font-display font-bold text-2xl tracking-wide transition-colors duration-300',
@@ -78,23 +81,31 @@ export function Header() {
                                 >
                                     Sri Lanka
                                 </span>
-                            </div>
+                            </div> */}
+                            <Image
+                                src="/logo/logo-1.png" // place your logo in public/logo.png
+                                alt="CeylonVoy Logo"
+                                width={180}
+                                height={60}
+                                className="h-16 w-auto"
+                                priority
+                            />
                         </Link>
 
                         {/* Desktop Nav */}
-                        <nav className="hidden lg:flex items-center gap-1">
+                        <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-1">
                             {NAV_LINKS.map(({ href, labelKey }) => (
                                 <Link
                                     key={href}
                                     href={href}
                                     className={cn(
-                                        'px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
+                                        'px-4 py-2 rounded-lg text-base font-medium transition-colors duration-200',
                                         isActive(href)
                                             ? scrolled
-                                                ? 'text-emerald-primary font-semibold'
+                                                ? 'text-gold-accent font-semibold'
                                                 : 'text-gold-accent font-semibold'
                                             : scrolled
-                                                ? 'text-heading hover:text-emerald-primary'
+                                                ? 'text-gold-accent font-semibold'
                                                 : 'text-white/85 hover:text-white'
                                     )}
                                 >
@@ -104,7 +115,7 @@ export function Header() {
                         </nav>
 
                         {/* Desktop Actions */}
-                        <div className="hidden lg:flex items-center gap-2">
+                        <div className="hidden lg:flex justify-end items-center gap-2">
 
                             {/* Language Switcher */}
                             <Link
@@ -125,7 +136,7 @@ export function Header() {
                             <Link
                                 href="/plan-your-journey"
                                 className={buttonVariants({
-                                    variant: scrolled ? 'primary' : 'outline-white',
+                                    variant: scrolled ? 'primary' : 'outline-gold',
                                     size: 'sm',
                                 })}
                             >
@@ -153,7 +164,7 @@ export function Header() {
             {/* ── Mobile Full-Screen Menu ──────────────────────────── */}
             <div
                 className={cn(
-                    'fixed inset-0 z-50 bg-emerald-dark flex flex-col lg:hidden',
+                    'fixed inset-0 z-50 bg-emerald-deepest flex flex-col lg:hidden',
                     'transition-all duration-300 ease-in-out',
                     menuOpen
                         ? 'opacity-100 translate-y-0 pointer-events-auto'

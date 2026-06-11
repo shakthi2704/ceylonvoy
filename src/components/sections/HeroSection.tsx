@@ -8,11 +8,12 @@ export async function HeroSection() {
     const t = await getTranslations('hero');
 
     return (
-        <section className="relative h-[88vh] min-h-[600px] flex items-center overflow-hidden">
+        <section className="relative h-[100vh] min-h-[640px] flex items-center overflow-hidden">
+            <div className="absolute bottom-0 left-0 w-full h-[4px] bg-[var(--color-gold-accent)] z-20" />
 
             {/* Background Image — replace src with real image when available */}
             <Image
-                src="/images/hero/bg-1.jpg"
+                src="/images/hero/bg-3.jpg"
                 alt="Sri Lanka landscape"
                 fill
                 priority
@@ -21,7 +22,7 @@ export async function HeroSection() {
             />
 
             {/* Gradient overlay — heavier at bottom for text contrast */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/65" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/25 to-black/60" />
 
             {/* Content */}
             <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
@@ -46,8 +47,8 @@ export async function HeroSection() {
 
                     {/* Subheadline */}
                     <p
-                        className="text-white/75 text-lg sm:text-xl leading-relaxed max-w-xl mb-10
-                       opacity-0 animate-fade-up [animation-delay:400ms] [animation-fill-mode:forwards]"
+                        className="text-white/75 text-lg sm:text-xl leading-relaxed max-w-xl mx-auto mb-10
+                        opacity-0 animate-fade-up [animation-delay:400ms] [animation-fill-mode:forwards]"
                     >
                         {t('subheadline')}
                     </p>

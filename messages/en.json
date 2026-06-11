@@ -1,10 +1,11 @@
 {
   "navigation": {
     "home": "Home",
-    "tours": "Tours",
+    "tours": "Tours Packages",
+    "experiences": "Experiences",
     "about": "About Us",
     "planJourney": "Plan Your Journey",
-    "requestQuote": "Request a Personalized Quote",
+    "requestQuote": "Request a Quote",
     "language": "Language"
   },
   "hero": {
@@ -14,6 +15,7 @@
     "requestQuote": "Request a Quote"
   },
   "whyChooseUs": {
+    "minititle": "The CeylonVoy Difference",
     "title": "Why Travel With CeylonVoy",
     "subtitle": "We craft exceptional Sri Lanka experiences tailored to your preferences",
     "privateTours": {
@@ -105,6 +107,12 @@
     "tagline": "Premium Sri Lanka experiences tailored for the discerning traveler.",
     "quickLinks": "Quick Links",
     "contact": "Contact Us",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "brandStatement": "Crafting extraordinary Sri Lanka journeys, one traveler at a time.",
+    "tourPackages": "Tour Packages",
+    "classicSriLanka": "Classic Sri Lanka",
+    "wildlifeAdventure": "Wildlife Adventure",
+    "beachEscape": "Beach Escape",
+    "luxuryJourney": "Luxury Journey"
   }
 }

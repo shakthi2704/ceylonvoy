@@ -15,8 +15,34 @@ export const metadata: Metadata = {
     },
     description:
         'Discover Sri Lanka with premium, tailor-made tours designed for discerning travelers from the Middle East and beyond.',
-};
 
+    icons: {
+        icon: [
+            { url: '/fevicon/favicon.ico' },
+            { url: '/fevicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+            { url: '/fevicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+        ],
+        apple: [
+            {
+                url: '/fevicon/apple-touch-icon.png',
+                sizes: '180x180',
+                type: 'image/png',
+            },
+        ],
+        other: [
+            {
+                rel: 'android-chrome',
+                url: '/fevicon/android-chrome-192x192.png',
+            },
+            {
+                rel: 'android-chrome',
+                url: '/fevicon/android-chrome-512x512.png',
+            },
+        ],
+    },
+
+    manifest: '/fevicon/site.webmanifest',
+};
 export function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
 }

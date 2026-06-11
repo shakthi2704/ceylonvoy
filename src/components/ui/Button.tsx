@@ -5,6 +5,7 @@ export type ButtonVariant =
     | 'primary'
     | 'secondary'
     | 'outline-white'
+    | 'outline-gold'
     | 'ghost'
     | 'gold';
 
@@ -23,7 +24,7 @@ export function buttonVariants({
 }: ButtonVariantsProps = {}) {
     return cn(
         // Base
-        'inline-flex items-center justify-center font-semibold transition-all duration-200',
+        'inline-flex items-center justify-center font-semibold transition-all duration-400',
         'cursor-pointer whitespace-nowrap',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-primary focus-visible:ring-offset-2',
         'disabled:opacity-50 disabled:pointer-events-none',
@@ -35,15 +36,17 @@ export function buttonVariants({
         'border border-emerald-primary text-emerald-primary hover:bg-emerald-primary hover:text-white',
         variant === 'outline-white' &&
         'border border-white text-white hover:bg-white hover:text-emerald-primary',
+        variant === 'outline-gold' &&
+        'border border-gold-accent text-gold-accent hover:bg-gold-accent hover:text-white active:scale-[0.98]',
         variant === 'ghost' &&
         'text-heading hover:text-emerald-primary hover:bg-emerald-primary/5',
         variant === 'gold' &&
         'bg-gold-accent text-white hover:bg-emerald-dark active:scale-[0.98]',
 
         // Sizes
-        size === 'sm' && 'text-sm px-4 py-2 rounded-lg gap-1.5',
-        size === 'md' && 'text-sm px-5 py-2.5 rounded-lg gap-2',
-        size === 'lg' && 'text-base px-8 py-4 rounded-xl gap-2',
+        size === 'sm' && 'text-sm px-4 py-2 rounded-md gap-1.5',
+        size === 'md' && 'text-sm px-5 py-2.5 rounded-md gap-2',
+        size === 'lg' && 'text-base px-8 py-4 rounded-md gap-2',
 
         className
     );

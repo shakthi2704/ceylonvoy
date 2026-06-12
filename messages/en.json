@@ -1,9 +1,12 @@
 {
   "navigation": {
     "home": "Home",
-    "tours": "Tours Packages",
+    "tours": "Tours ",
     "experiences": "Experiences",
+    "thingsToDo": "Things to Do",
     "about": "About Us",
+    "stories": "Stories",
+    "destinations": "Destinations",
     "planJourney": "Plan Your Journey",
     "requestQuote": "Request a Quote",
     "language": "Language"
@@ -13,6 +16,15 @@
     "subheadline": "Tailor-made private tours crafted for the discerning traveler",
     "exploreTours": "Explore Tours",
     "requestQuote": "Request a Quote"
+  },
+  "welcome": {
+    "eyebrow": "Welcome to CeylonVoy",
+    "headline": "A teardrop island where eight climates, three oceans and twenty-five centuries of culture meet.",
+    "subtitle": "From the cinnamon coasts of Galle to the mist-wrapped tea estates of Nuwara Eliya — Sri Lanka offers a tapestry of journeys, woven by the hands of those who know it best.",
+    "happyTravelers": "Happy Travelers",
+    "curatedItineraries": "Curated Itineraries",
+    "yearsExperience": "Years of Expertise",
+    "privateTours": "Private & Exclusive"
   },
   "whyChooseUs": {
     "minititle": "The CeylonVoy Difference",

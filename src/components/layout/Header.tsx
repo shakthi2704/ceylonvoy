@@ -9,10 +9,10 @@ import { buttonVariants } from '@/components/ui/Button';
 import Image from 'next/image';
 
 const NAV_LINKS = [
-    { href: '/', labelKey: 'home' },
-    { href: '/tours', labelKey: 'tours' },
     { href: '/about', labelKey: 'about' },
-
+    { href: '/destinations', labelKey: 'destinations' },
+    { href: '/tours', labelKey: 'tours' },
+    { href: '/stories', labelKey: 'stories' },
     { href: '/plan-your-journey', labelKey: 'planJourney' },
 ] as const;
 
@@ -53,13 +53,14 @@ export function Header() {
                 className={cn(
                     'fixed top-0 start-0 end-0 z-50 transition-all duration-300',
                     scrolled
-                        ? 'bg-black/60 backdrop-blur-md shadow-sm'
-                        : 'bg-black/50'
+                        ? 'bg-[var(--color-emerald-deepest)]/90 backdrop-blur-md shadow-sm'
+                        : 'bg-[var(--color-emerald-deepest)]/60'
                 )}
             >
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[var(--color-gold-accent)] z-20" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-[auto_1fr_auto] items-center h-20">
+                    {/* <div className="grid grid-cols-[auto_1fr_auto] items-center h-20"> */}
+                    <div className="flex items-center justify-between h-20">
 
                         {/* Logo */}
                         <Link href="/" className="shrink-0 group">
@@ -95,18 +96,38 @@ export function Header() {
                         {/* Desktop Nav */}
                         <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-1">
                             {NAV_LINKS.map(({ href, labelKey }) => (
+                                // <Link
+                                //     key={href}
+                                //     href={href}
+                                //     className={cn(
+                                //         'px-4 py-2 rounded-lg text-base font-medium transition-colors duration-200',
+                                //         isActive(href)
+                                //             ? scrolled
+                                //                 ? 'text-emerald-primary font-semibold'
+                                //                 : 'text-gold-accent font-semibold'
+                                //             : scrolled
+                                //                 ? 'text-heading text-white  hover:text-gold-accent'
+                                //                 : 'text-white/85 hover:text-white'
+                                //     )}
+                                // >
+                                //     {t(labelKey)}
+                                // </Link>
                                 <Link
                                     key={href}
                                     href={href}
                                     className={cn(
-                                        'px-4 py-2 rounded-lg text-base font-medium transition-colors duration-200',
+                                        'relative px-4 py-2 rounded-lg text-base font-medium transition-all duration-300',
+
+                                        // Underline
+                                        'after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0',
+                                        'after:h-[2px] after:w-0 after:bg-gold-accent',
+                                        'after:transition-all after:duration-300 hover:after:w-[70%]',
+
                                         isActive(href)
-                                            ? scrolled
-                                                ? 'text-gold-accent font-semibold'
-                                                : 'text-gold-accent font-semibold'
+                                            ? 'text-gold-accent font-semibold after:w-[70%]'
                                             : scrolled
-                                                ? 'text-gold-accent font-semibold'
-                                                : 'text-white/85 hover:text-white'
+                                                ? 'text-white hover:text-gold-accent'
+                                                : 'text-white/85 hover:text-gold-accent'
                                     )}
                                 >
                                     {t(labelKey)}
@@ -115,9 +136,9 @@ export function Header() {
                         </nav>
 
                         {/* Desktop Actions */}
-                        <div className="hidden lg:flex justify-end items-center gap-2">
+                        {/* <div className="hidden lg:flex justify-end items-center gap-2">
 
-                            {/* Language Switcher */}
+
                             <Link
                                 href={pathname}
                                 locale={switchLocale}
@@ -132,7 +153,7 @@ export function Header() {
                                 <span>{switchLabel}</span>
                             </Link>
 
-                            {/* CTA */}
+
                             <Link
                                 href="/plan-your-journey"
                                 className={buttonVariants({
@@ -141,6 +162,18 @@ export function Header() {
                                 })}
                             >
                                 {t('requestQuote')}
+                            </Link>
+                        </div> */}
+
+                        <div className="hidden lg:flex justify-end items-center">
+                            <Link
+                                href={pathname}
+                                locale={switchLocale}
+                                // className={buttonVariants({ variant: 'gold', size: 'sm' })}
+                                className="flex items-center gap-1.5 text-sm font-medium px-3 py-2 rounded-lg text-white/80 hover:text-white hover:text-[var(--color-gold-accent)]/80 transition-colors duration-400"
+                            >
+                                <Globe className="w-4 h-4 shrink-0" />
+                                <span>{switchLabel}</span>
                             </Link>
                         </div>
 
@@ -174,12 +207,20 @@ export function Header() {
                 {/* Mobile Menu Top Bar */}
                 <div className="flex items-center justify-between px-6 h-20 rtl:flex-row-reverse border-b border-white/10">
                     <Link href="/" className="flex flex-col leading-none">
-                        <span className="font-display font-bold text-2xl text-white tracking-wide">
+                        {/* <span className="font-display font-bold text-2xl text-white tracking-wide">
                             Ceylon<span className="text-gold-accent">Voy</span>
                         </span>
                         <span className="text-[10px] tracking-[0.25em] uppercase text-white/50">
                             Sri Lanka
-                        </span>
+                        </span> */}
+                        <Image
+                            src="/logo/logo-1.png" // place your logo in public/logo.png
+                            alt="CeylonVoy Logo"
+                            width={180}
+                            height={60}
+                            className="h-16 w-auto"
+                            priority
+                        />
                     </Link>
 
                     <button
@@ -212,7 +253,7 @@ export function Header() {
                 </nav>
 
                 {/* Mobile Bottom Actions */}
-                <div className="px-6 pb-10 pt-6 space-y-3">
+                {/* <div className="px-6 pb-10 pt-6 space-y-3">
                     <Link
                         href="/plan-your-journey"
                         className={buttonVariants({
@@ -232,8 +273,18 @@ export function Header() {
                         <Globe className="w-4 h-4" />
                         <span className="text-sm">{switchLabel}</span>
                     </Link>
-                </div>
-            </div>
+                </div> */}
+                <div className="px-6 pb-10 pt-6 justify-end">
+                    <Link
+                        href={pathname}
+                        locale={switchLocale}
+                        className="flex items-center justify-center gap-2 py-3 text-white/60 hover:text-white transition-colors"
+                    >
+                        <Globe className="w-4 h-4" />
+                        <span className="text-sm">{switchLabel}</span>
+                    </Link>
+                </div >
+            </div >
         </>
     );
 }

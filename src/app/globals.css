@@ -4,12 +4,13 @@
     /* ─────────────────────────────────────
      Brand Colors
   ───────────────────────────────────── */
-    --color-emerald-primary: #024D29;
+    --color-emerald-primary: #133e3e;
     --color-emerald-dark: #024D29;
     --color-gold-accent: #D4AF37;
     --color-gold-light: #E8D9A8;
     --color-ivory: #F0E9DC;
-    --color-emerald-deepest: #010F08;
+    --color-emerald-deepest: #0b2c2d;
+
 
     /* ─────────────────────────────────────
      Text Colors
@@ -31,6 +32,10 @@
   ───────────────────────────────────── */
     --spacing-section: 5rem;
     --spacing-section-lg: 8rem;
+
+    /* --animate-marquee: marquee 40s linear infinite; */
+
+    --animate-fade-up: fade-up 0.7s ease forwards;
 }
 
 /* ─────────────────────────────────────
@@ -75,6 +80,30 @@ body {
     }
 }
 
-@theme {
-    --animate-fade-up: fade-up 0.7s ease forwards;
+@keyframes marquee {
+    from {
+        transform: translateX(0)
+    }
+
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+[dir="rtl"] .animate-marquee {
+    animation-direction: reverse;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+[dir="rtl"] .marquee-track {
+    animation-direction: reverse;
 }

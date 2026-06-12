@@ -9,7 +9,7 @@ export async function HeroSection() {
 
     return (
         <section className="relative h-[100vh] min-h-[640px] flex items-center overflow-hidden">
-            <div className="absolute bottom-0 left-0 w-full h-[4px] bg-[var(--color-gold-accent)] z-20" />
+            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[var(--color-gold-accent)] z-20" />
 
             {/* Background Image — replace src with real image when available */}
             <Image
@@ -60,13 +60,13 @@ export async function HeroSection() {
                     >
                         <Link
                             href="/tours"
-                            className={buttonVariants({ variant: 'gold', size: 'lg' })}
+                            className={buttonVariants({ variant: 'outline-gold', size: 'lg' })}
                         >
                             {t('exploreTours')}
                         </Link>
                         <Link
                             href="/plan-your-journey"
-                            className={buttonVariants({ variant: 'outline-white', size: 'lg' })}
+                            className={buttonVariants({ variant: 'gold', size: 'lg' })}
                         >
                             {t('requestQuote')}
                         </Link>
